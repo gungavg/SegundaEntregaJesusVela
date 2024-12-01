@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Card from "./Card"; // Reutiliza tu componente Card si es posible
+import Card from "../Components/Card"; // Reutiliza tu componente Card si es posible
 
 const HomePage = () => {
   const [dentists, setDentists] = useState([]);

@@ -1,15 +1,20 @@
 
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import Form from './Components/Form'
-
+import Form from './Components/Form';
+import Home from './Routes/Home'
+import {Routes, Route} from 'react-router-dom';
 function App() {
   return (
-      <div className="App">
-          <Navbar/>
-          <Form></Form>
-          <Footer/>
-      </div>
+<>
+  <Routes>
+    <Route path="/" element={<Home></Home>}></Route>
+   
+    {/* <Route path="/favs" element={}></Route>
+    <Route path="/contact" element={}></Route> */}
+
+  </Routes>
+</>
   );
 }
 

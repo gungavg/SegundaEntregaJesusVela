@@ -1,0 +1,15 @@
+:root{
+    /* Colores modo claro */
+    --main-color:#A0E7E5;
+    --secondary-color : #BFD7ED;
+    --third-color: #B4F8C8
+    --primary-text-color:#333333
+
+
+}
+.navbar{
+    background-color: var(--main-color);
+    color: var(--primary-text-color);
+    /* width: 100vw; */
+    justify-content: space-between;
+}

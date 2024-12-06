@@ -1,9 +1,6 @@
-
-
-/* Estilos generales para el Navbar */
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: var(--navbar-bg);
@@ -12,18 +9,30 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  .navbar a {
+  .navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--navbar-text);
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .navbar-links a {
     text-decoration: none;
     color: inherit;
     font-size: 18px;
     font-weight: bold;
   }
   
-  .navbar a:hover {
+  .navbar-links a:hover {
     text-decoration: underline;
   }
   
-  .navbar button {
+  .navbar-links button {
     padding: 8px 16px;
     font-size: 16px;
     font-weight: bold;
@@ -35,12 +44,11 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  .navbar button:hover {
+  .navbar-links button:hover {
     background-color: var(--button-hover-bg);
     color: var(--button-hover-text);
   }
   
-  /* Tema oscuro */
   :root.dark {
     --navbar-bg: #333;
     --navbar-text: #fff;
@@ -51,7 +59,6 @@
     --button-hover-text: #fff;
   }
   
-  /* Tema claro */
   :root.light {
     --navbar-bg: #f9f9f9;
     --navbar-text: #333;

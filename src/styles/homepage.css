@@ -1,0 +1,20 @@
+.home-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    color: var(--primary-color, #333);
+    margin-bottom: 30px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  

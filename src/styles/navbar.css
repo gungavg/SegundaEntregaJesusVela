@@ -1,71 +1,106 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--navbar-bg);
-    color: var(--navbar-text);
-    border-bottom: 2px solid var(--navbar-border);
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  border-bottom: 2px solid var(--navbar-border);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--navbar-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.navbar-logo:hover {
+  color: var(--button-hover-text);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
+}
+
+.navbar-links button {
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-links button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
+  transform: scale(1.05);
+}
+
+:root.dark {
+  --navbar-bg: #222;
+  --navbar-text: #fff;
+  --navbar-border: #444;
+  --button-bg: #555;
+  --button-text: #fff;
+  --button-hover-bg: #777;
+  --button-hover-text: #fff;
+}
+
+:root.light {
+  --navbar-bg: #ffffff;
+  --navbar-text: #333333;
+  --navbar-border: #e0e0e0;
+  --button-bg: #f5f5f5;
+  --button-text: #333333;
+  --button-hover-bg: #e0e0e0;
+  --button-hover-text: #000000;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
   }
-  
-  .navbar-logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--navbar-text);
-  }
-  
+
   .navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
   }
-  
-  .navbar-links a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 18px;
-    font-weight: bold;
+
+  .navbar-links a, .navbar-links button {
+    width: 100%;
+    text-align: center;
   }
-  
-  .navbar-links a:hover {
-    text-decoration: underline;
-  }
-  
-  .navbar-links button {
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .navbar-links button:hover {
-    background-color: var(--button-hover-bg);
-    color: var(--button-hover-text);
-  }
-  
-  :root.dark {
-    --navbar-bg: #333;
-    --navbar-text: #fff;
-    --navbar-border: #444;
-    --button-bg: #555;
-    --button-text: #fff;
-    --button-hover-bg: #777;
-    --button-hover-text: #fff;
-  }
-  
-  :root.light {
-    --navbar-bg: #f9f9f9;
-    --navbar-text: #333;
-    --navbar-border: #ddd;
-    --button-bg: #eee;
-    --button-text: #333;
-    --button-hover-bg: #ddd;
-    --button-hover-text: #111;
-  }
-  
+}

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-
+import "../styles/form.css";
 
 const Form = () => {
   //Aqui deberan implementar el form completo con sus validaciones
-  const [contact, setContac] = useState({
+  const [contact, setContact] = useState({
     name: "",
     mail: "",
   });
@@ -40,33 +40,48 @@ const Form = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-      <label htmlFor="name"> Nombre completo:</label>
-      <input 
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Ingrese su nombre completo"
-        onChange={(event)=>
-          setContac({...contact, name : event.target.value})
-        }
-      />
-      {errors.name && <p style={{color:"red"}}>{errors.name}</p>}
-      <label htmlFor="mail">Correo:</label>
-      <input 
-        type="mail"
-        name="mail"
-        id="mail"
-        placeholder="Insere su correo"
-        onChange={(event) =>
-          setContac({...contact, mail: event.target.value})}
-      />
-  {errors.mail && <p style={{color: "red"}}>{errors.mail}</p>}
-  <input type="submit" value="Contactenme" />
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form-field">
+          <label htmlFor="name">Nombre completo:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Ingrese su nombre completo"
+            value={contact.name}
+            onChange={(event) =>
+              setContact({ ...contact, name: event.target.value })
+            }
+          />
+          {errors.name && <p className="error-message">{errors.name}</p>}
+        </div>
 
+        <div className="form-field">
+          <label htmlFor="mail">Correo:</label>
+          <input
+            type="email"
+            name="mail"
+            id="mail"
+            placeholder="Ingrese su correo"
+            value={contact.mail}
+            onChange={(event) =>
+              setContact({ ...contact, mail: event.target.value })
+            }
+          />
+          {errors.mail && <p className="error-message">{errors.mail}</p>}
+        </div>
+
+        <button type="submit" className="submit-btn">
+          Contactarme
+        </button>
       </form>
-      {show && <p>Gracias {contact.name}, te contactaremos cuando antes via mail</p>}
+
+      {show && (
+        <div className="thank-you-message">
+          <p>Gracias, {contact.name}. Te contactaremos por correo.</p>
+        </div>
+      )}
     </div>
   );
 };

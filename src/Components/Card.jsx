@@ -20,7 +20,7 @@ const Card = ({ data }) => {
       {/* En cada card deberan mostrar en name - username y el id */}
       <Link to={`/detail/${data.id}`} className="card-link">
         <img
-          src="../../public/images/doctor.jpg"
+          src="/images/doctor.jpg"
           alt={`${data.name} profile`}
           className="card-image"
         />
